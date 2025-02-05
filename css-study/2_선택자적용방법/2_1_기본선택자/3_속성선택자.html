@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 속성 선택자</title>
+  <style>
+      [custom=title] {
+          font-size: 20px;
+      }
+
+      input[type=checkbox] {
+          cursor: grabbing;
+      }
+
+      input[type=radio] {
+          margin: 15px;
+      }
+
+      button[type=reset] {
+          background: red;
+      }
+
+  </style>
+</head>
+<body>
+<form action="https://search.naver.com/search.naver">
+  <h4 custom="title">체크박스 옵션</h4>
+  <input type="checkbox" name="game" value="pokemon">포켓몬스터<br>
+  <input type="checkbox" name="game" value="lostark">로스크 아크<br>
+  <input type="checkbox" name="game" value="animalforest">동물의 숲<br>
+  <input type="checkbox" name="game" value="leagueoflegend">리그 오브 레전드<br>
+
+  <h3 custom="title">라디오 옵션</h3>
+  <input type="radio" name="sports" value="boxing">복싱<br>
+  <input type="radio" name="sports" value="soccer">축구<br>
+  <input type="radio" name="sports" value="baseball">야구<br>
+  <input type="radio" name="sports" value="handball">핸드볼<br>
+
+  <button>제출버튼</button>
+  <button type="reset">초기화버튼</button>
+</form>
+</body>
+</html>
