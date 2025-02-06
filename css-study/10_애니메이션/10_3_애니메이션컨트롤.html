@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>애니메이션 컨트롤</title>
+  <style>
+      .box {
+          width: 100px;
+          height: 100px;
+          background-color: cyan;
+          /* animation: name duration timing-function delay */
+          animation: size-changing 2s linear 0s;
+          animation-iteration-count: infinite;
+          animation-direction: normal; /* normal, reverse, alternate + inherit*/
+          /* 애니메이션에 대해서 동작을 보유한 요소에 정의부를 전부 포함,
+             특정 상태에 대해서 재생 컨트롤만 수행 */
+          animation-play-state: paused; /* revert */
+      }
+
+      /* 전환 효과(transition) 과 결합시켜 Trigger 조건을 적용하는 기법 */
+      .box:hover {
+          animation-play-state: running;
+      }
+
+      @keyframes size-changing {
+          0% {
+              width: 100px;
+          }
+          25% {
+              width: 200px;
+          }
+          50% {
+              width: 500px;
+          }
+          75% {
+              width: 50px;
+          }
+          100% {
+              width: 800px;
+          }
+      }
+  </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

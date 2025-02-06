@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>디스플레이 속성</title>
+  <style>
+      #none {
+          display: none;
+          /* visibility: hidden 보다 더 확실하게 화면상에서 없애줌! */
+      }
+
+      span {
+          /* display: inline */
+          width: 500px;
+          height: 300px;
+          /* 위 크기는 지정되지만 적용안됨 */
+      }
+
+      span.inlineblock {
+          display: inline-block;
+          width: 500px;
+          height: 300px;
+          /* 위 크기는 실제로 적용됨 */
+      }
+
+      input {
+          /* 인라인 */
+          /* 일반 인라인 -> 사이즈 지정 불가 */
+
+          /* type="text" 의 경우 인라인 블록 */
+          /* display: inline-block */
+          /* 인라인 블록일 때만 박스 형태로 공간을 점유 -> 사이즈 지정 가능 */
+          width: 100px;
+          height: 50px;
+      }
+
+      .item {
+          /* 블록 */
+          /* display: block */
+          /* div 가 블록엘리먼트의 태표적 사례 */
+          /* 블록 엘리먼트는 행을 독점한다 */
+          /* 블록 엘리먼트는 가로 크기가 주어진 화면 크기보다 작아도,
+             다음에 나타나는 요소를 아래로 보내버린다 */
+          width: 300px;
+          height: 100px;
+      }
+
+  </style>
+</head>
+<body>
+<div class="box">
+  <h3>아래 span 태그는 inline 입니다</h3>
+  <span>여기에는 사이즈 지정이 어려움</span>
+  <span>여기에는 사이즈 지정이 어려움</span>
+  <span>여기에는 사이즈 지정이 어려움</span>
+  <span>여기에는 사이즈 지정이 어려움</span>
+  <span>여기에는 사이즈 지정이 어려움</span>
+
+  <h3>아래 span 태그는 inline-block 입니다</h3>
+  <span class="inlineblock">여기에는 사이즈 지정이 가능함</span>
+  <span class="inlineblock">여기에는 사이즈 지정이 가능함</span>
+  <span class="inlineblock">여기에는 사이즈 지정이 가능함</span>
+  <span class="inlineblock">여기에는 사이즈 지정이 가능함</span>
+  <span class="inlineblock">여기에는 사이즈 지정이 가능함</span>
+</div>
+<div class="box">
+  <input value="1" type="text">
+  <input value="2" type="text">
+  <input value="3" type="text" id="none">
+  <input value="4" type="hidden" id="hidden">
+  <input value="5" type="text" id="inlineblock">
+  <input value="6" type="text" id="block">
+</div>
+<div class="item">item 상자의 가로 크기가 몇인지 확인</div>
+<div class="item">item 상자</div>
+<div class="item">item 상자</div>
+<div class="item">item 상자</div>
+<div class="item">item 상자</div>
+</body>
+</html>

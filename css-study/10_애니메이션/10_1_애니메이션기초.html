@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>애니메이션 기초</title>
+  <style>
+      .animated {
+          width: 100px;
+          height: 100px;
+          background-color: midnightblue;
+          line-height: 100px;
+          text-align: center;
+          color: lightblue;
+
+          animation-name: metamon;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
+
+      /* 컷 전환 효과를 전 후 상태 2개에만 기반하는 것이 아니라 */
+      /* 단계별 프레임을 상세 정의할 수 있음 */
+      @keyframes metamon {
+          0% {
+              width: 100px;
+              background-color: midnightblue;
+          }
+          20% {
+              width: 200px;
+              height: 200px;
+              background-color: yellowgreen;
+          }
+          40% {
+              width: 400px;
+              background-color: aqua;
+          }
+          60% {
+              width: 150px;
+              background-color: darkorchid;
+          }
+          80% {
+              width: 600px;
+              background-color: darkslategrey;
+          }
+          100% {
+              width: 800px;
+              background-color: cyan;
+          }
+      }
+  </style>
+</head>
+<body>
+<div class="animated">
+  ANIMATED
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fixed 포지션 : viewport 의 이동을 따라감</title>
+  <style>
+      header {
+          position: fixed;
+          /* fixed 를 적용하면 relative 로직에서 벗어남! */
+          top: 0;
+          margin: 0 0 50px 0;
+      }
+
+      .to-top {
+          position: fixed;
+          /* fixed 를 적용하면 relative 로직에서 벗어남! */
+          bottom: 20px;
+          right: 20px;
+          margin: 0 0 50px 0;
+      }
+
+      header > nav li {
+          display: inline-block;
+          margin-right: 50px;
+      }
+
+      /* header position holder */
+      #header-position-holder {
+          height: 52px;
+      }
+
+      .absolute {
+          position: absolute;
+          top: 150px;
+          left: 150px;
+      }
+
+      .container {
+          width: 800px;
+          height: 2000px;
+          border: 5px solid blue;
+      }
+
+      section {
+          width: 100px;
+          height: 100px;
+          border: 5px solid darkcyan;
+      }
+
+      section:nth-child(2) {
+          /* relative : 다른 요소들과의 상호작용 기준으로 위치가 정해짐 */
+          position: relative;
+
+          /* 위치 지정 좌상단 기준 */
+          /* relative 명시되지 않아도, 자연스레 흐르던 타 요소와의 관계성 기준점 존재 */
+          /* 해당 지점에서부터 위치가 정해진다 */
+          top: 150px;
+          left: 150px;
+
+          /* 위치 지정 우하단 기준 */
+          /*bottom: 150px;*/
+          /*right: 150px*/
+      }
+
+      section:nth-child(3) {
+          /*position: relative;*/
+
+          /* 위치 지정 좌상단 기준 */
+          /* relative 명시하지 않으면 아래 속성 적용되지 않음 */
+          top: 150px;
+          left: 150px;
+
+          /* 위치 지정 우하단 기준 */
+          /*bottom: 150px;*/
+          /*right: 150px*/
+      }
+  </style>
+</head>
+<body>
+<!-- 화면 구성 시 주로 갖출 포맷 -->
+<header>
+  <nav>
+    <ul>
+      <li>메인</li>
+      <li>사이트맵</li>
+      <li>게시판</li>
+      <li>로그인</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+</header>
+<div id="header-position-holder"></div>
+<div class="container">
+  <main>
+    <section>
+      <article>아티클 1</article>
+    </section>
+    <section>
+      <article>아티클 2</article>
+    </section>
+    <section>
+      <article>아티클 3</article>
+    </section>
+    <section class="absolute">
+      <article>아티클 4</article>
+      <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae commodi dolorem eum facilis molestias necessitatibus perferendis qui quia unde? Blanditiis fugiat inventore quaerat quidem totam? Blanditiis exercitationem in velit!</span><span>Autem consectetur cupiditate eum fugit laboriosam neque nobis non officiis, omnis voluptas. Assumenda consequuntur debitis harum laudantium mollitia necessitatibus nisi odit omnis perferendis praesentium sequi tempora, tenetur. Doloremque esse, provident?</span><span>A, alias commodi doloribus ducimus enim esse, harum hic in iste labore maxime molestiae mollitia neque odit pariatur placeat qui, saepe vel veniam veritatis. Cupiditate doloremque error explicabo illum numquam?</span><span>Amet deleniti excepturi libero molestiae nesciunt nulla officiis perspiciatis. Aliquid aspernatur autem consequatur corporis cumque debitis dolor, esse harum, in ipsa laboriosam maxime nobis odio quaerat quia temporibus, velit. Voluptatibus.</span><span>Accusamus ad, aperiam architecto consectetur cum, dolor enim exercitationem facilis fuga inventore ipsa ipsum libero quis recusandae sint, sit temporibus vel? Dolore error in laboriosam nisi perspiciatis quidem, sed voluptatem?</span><span>Accusamus adipisci architecto at, cum deserunt distinctio ducimus, eligendi fugiat harum ipsa iste laboriosam laudantium maxime natus nihil nostrum officiis omnis optio pariatur perspiciatis quis reiciendis, sed suscipit? Natus, sed.</span><span>Animi autem blanditiis doloremque doloribus ea facilis mollitia, officia quae quia quo repellat temporibus! A aliquid assumenda beatae commodi cumque delectus deserunt doloremque, fugiat laboriosam omnis, quia quisquam quos veritatis?</span><span>Amet aperiam at commodi consequatur deserunt dolores doloribus eius fugiat laboriosam laborum libero magni, mollitia natus nemo odit officia provident quas quis quisquam, quo sed sunt temporibus vel vero voluptate?</span><span>Aperiam aut autem doloremque dolores, eius ipsam laboriosam, natus quibusdam reprehenderit vitae, voluptates voluptatum. Asperiores dolore eius impedit quae tempora? Aperiam architecto beatae, exercitationem expedita hic nostrum sint vero voluptatem.</span><span>Ad autem consequuntur doloremque doloribus ducimus hic, impedit ipsa libero maxime mollitia natus nesciunt officiis quis quisquam repudiandae sit vel, velit? Adipisci alias deserunt explicabo illo laboriosam placeat recusandae, sit.</span><span>Ab alias assumenda at blanditiis corporis, dolorum eius eos est eum fuga hic ipsa ipsum quia quod recusandae reiciendis, sit ut? Beatae ea esse nihil pariatur porro quae recusandae, ullam.</span><span>Aliquam cum dicta nam quas reiciendis. Commodi consequuntur dolore enim eos expedita impedit molestiae neque nihil, nobis nulla obcaecati odio odit perspiciatis quam quasi repellendus sequi suscipit ut? Aliquam, ut?</span><span>Aspernatur, blanditiis, exercitationem. At distinctio dolores, ducimus eveniet in labore nam nisi officia repudiandae sint tempore voluptatem. Alias corporis, dolores, doloribus, eaque eos inventore iusto obcaecati perferendis sit suscipit vel?</span><span>Cum deleniti deserunt iusto obcaecati perspiciatis quia totam. Ab aspernatur cupiditate dolorem id magni necessitatibus nesciunt, pariatur reprehenderit. Amet ea error explicabo nulla quisquam sapiente. Aliquid at atque ipsam vero!</span><span>Architecto aspernatur doloremque eveniet molestias optio, quae quaerat repellat rerum. Accusantium adipisci alias assumenda consequuntur, delectus dolor, iste magni minima nihil obcaecati officia optio pariatur quisquam reprehenderit sed sequi voluptates?</span><span>Ad aspernatur, at, atque dicta dolore doloribus ducimus eligendi illum incidunt laboriosam maiores maxime necessitatibus omnis quas, quod repellendus sit unde voluptatem! Animi eligendi ipsa labore sed velit vitae, voluptatem.</span><span>A culpa cumque distinctio et impedit itaque laboriosam magnam nam, non nulla optio pariatur quo, velit. Adipisci aliquam at aut autem, cupiditate, eius iure molestias optio praesentium tempora totam unde.</span><span>Ab animi asperiores assumenda consectetur deserunt est exercitationem ipsa, iste laborum minima, nam natus non odio perferendis vel! Dolorum fuga labore molestiae non porro quas quasi quod saepe similique voluptatum!</span><span>Accusantium aliquam aliquid amet architecto beatae commodi doloribus ea eius est explicabo facere harum ipsum labore, magnam nam numquam obcaecati optio pariatur porro quae quaerat quibusdam, quidem repellat velit vero?</span><span>A ab, architecto aspernatur atque aut autem cum cumque cupiditate distinctio dolor et exercitationem explicabo harum id labore libero numquam odit possimus reiciendis, repudiandae soluta sunt ullam unde voluptatibus voluptatum.</span><span>At ea est et inventore nesciunt officiis, voluptate. Deserunt dolor eos incidunt magnam molestias nisi repellat, ut voluptas? Accusamus aut dignissimos distinctio excepturi minima officiis optio quia, quibusdam saepe totam!</span><span>Asperiores at cumque facere fuga ipsam iure laudantium minima minus, nemo nesciunt omnis perspiciatis porro quam rem sapiente tempore ullam vero vitae! Beatae dicta facere fuga neque odit quod, vel?</span><span>Alias aperiam assumenda autem culpa deserunt dolorem ea excepturi exercitationem illo illum in iste laboriosam, magni nam nemo nisi obcaecati praesentium quasi quo ratione repellat sapiente sunt tempora tempore velit.</span><span>Delectus dicta eum, inventore odit quos tempora vero voluptatum. Alias aliquid delectus excepturi inventore laboriosam nisi non officia quia velit veniam veritatis, voluptates! Ab blanditiis quam quia quis temporibus voluptatibus?</span><span>A ad autem blanditiis doloribus eligendi eos est harum illo laborum nemo nesciunt nihil optio provident, quaerat quisquam ratione, sed unde? Debitis dolore dolorem expedita facilis ipsa velit voluptatum. Amet!</span><span>Commodi eligendi illum itaque officia tempora. Aspernatur assumenda deleniti distinctio dolores, eligendi iure maiores molestias officia quibusdam, quisquam repellendus saepe, sequi similique voluptate voluptatibus? Cumque officia omnis quos sapiente sed!</span><span>Cum distinctio doloribus earum fugiat provident quia quis quos sequi vel vitae. Dolor dolores error est facilis illum inventore ipsa laudantium libero maiores minus nulla numquam, quis rem sit, vel.</span><span>Commodi deserunt laudantium officiis? Assumenda deleniti deserunt distinctio exercitationem illum inventore ipsam iure laborum obcaecati rem. Accusamus aliquam autem beatae commodi ex excepturi incidunt nemo reprehenderit soluta suscipit. Alias, culpa.</span><span>Animi delectus dolorem, doloribus obcaecati perferendis voluptate? Ab, aliquid asperiores aspernatur atque consectetur deserunt dolorum eius illo in, magni nam, officiis qui quisquam quos rem suscipit unde ut vitae! Quisquam!</span><span>Ad alias aliquam beatae consequuntur deleniti dignissimos doloremque dolores, doloribus eaque et ipsa ipsum iure laudantium nostrum perspiciatis reiciendis repudiandae saepe vitae voluptatibus voluptatum. Aliquam beatae dolores impedit itaque iusto?</span>
+      </p>
+    </section>
+  </main>
+</div>
+<div class="to-top">
+  <a href="#">맨 위로 이동</a>
+</div>
+</body>
+</html>

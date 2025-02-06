@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transition : 전환과 변환</title>
+  <style>
+      .transition-box {
+          width: 200px;
+          height: 200px;
+          background-color: cornflowerblue;
+          margin: 10px;
+          text-align: center;
+          line-height: 200px;
+
+          transition-property: border-radius, background-color, width;
+          transition-timing-function: steps(10), ease-in, linear;
+          transition-duration: 10s;
+
+          /* 전환동작 duration timing-function delay */
+          /*transition: all 5s ease-in 0s;*/
+      }
+
+      /* 상태 선택자 -> 상태의 전환 */
+      /* 전환시에 어떤 효과를 적용할 것인가? */
+      .transition-box:hover {
+          border-radius: 50%;
+          background-color: lightblue;
+          width: 1000px;
+      }
+
+      /* ======================= */
+
+      .transform-box {
+          width: 200px;
+          height: 200px;
+          background-color: cornflowerblue;
+          margin: 10px;
+          text-align: center;
+          line-height: 200px;
+
+          /* Transform 동작에서도 아래 속성 공유됨 */
+          transition-duration: 2s; /* 부드러운 동작을 위해 꼭 필요 */
+      }
+
+
+      /* 상태 변화가 동작의 트리거 조건이 됨 */
+      .transform-box.box1:hover {
+          /*  전환될 상태 정의 X */
+          /*  동작할 내용 정의 O  */
+
+          /*transform: rotate3d(x, y, z, deg);*/
+          transform: rotate3d(-10, 0, 0, 180deg);
+      }
+
+      .transform-box.box2:hover {
+          /* 좌상단 기준 좌표 변경 */
+          transform: translate(200px, -200px);
+      }
+
+      .transform-box.box3:hover {
+          transform: scale(300%);
+      }
+
+      .transform-box.box4:hover {
+          /*transform: skew(0, 50deg); !*상하, 좌우*!*/
+          transform: skew(50deg, 0); /*상하, 좌우*/
+      }
+
+      .transform-box.box5:hover {
+          transform: rotate(720deg) translate(300px, 0px) scale(2);
+      }
+
+  </style>
+</head>
+<body>
+<div class="transition-box"></div>
+<div class="transform-box box1">1</div>
+<div class="transform-box box2">2</div>
+<div class="transform-box box3">3</div>
+<div class="transform-box box4">4</div>
+<div class="transform-box box5">5</div>
+</body>
+</html>

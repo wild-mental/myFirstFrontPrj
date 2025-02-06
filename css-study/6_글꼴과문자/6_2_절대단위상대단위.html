@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>절대단위와 상대단위</title>
+  <style>
+      /* `px`, `pt`, `mm`, `cm`, `in`(inch)  */
+      #absolute1 {
+          font-size: 20px;
+      }
+
+      #absolute2 {
+          font-size: 20pt; /*(0.3528mm 정도)*/
+      }
+
+      #absolute3 {
+          font-size: 7.056mm;
+      }
+
+      #absolute4 {
+          font-size: 0.7056cm;
+      }
+
+      #absolute5 {
+          font-size: 0.28in;
+      }
+
+      .container {
+          font-size: 20px;
+      }
+
+      #relative1 {
+          /* 상위 항목의 상대적 상속 */
+          font-size: 1.5em; /*font-size: 30px;*/
+      }
+
+      #relative2 {
+          /* 루트요소 기준의 상대적 상속 */
+          font-size: 1.5rem;
+      }
+
+      .box {
+          width: 200px;
+          height: 200px;
+          background: lightcoral;
+          margin: 5px;
+      }
+
+      .box.vw {
+          width: 50vw; /* % 를 viewport 기준으로 적용 */
+      }
+
+      .box.vh {
+          height: 50vh; /* % 를 viewport 기준으로 적용 */
+      }
+
+  </style>
+</head>
+<body>
+<ul>
+  <li id="absolute1">1번째 절대단위 테스트 리스트 아이템</li>
+  <li id="absolute2">2번째 절대단위 테스트 리스트 아이템</li>
+  <li id="absolute3">3번째 절대단위 테스트 리스트 아이템</li>
+  <li id="absolute4">4번째 절대단위 테스트 리스트 아이템</li>
+  <li id="absolute5">5번째 절대단위 테스트 리스트 아이템</li>
+</ul>
+<div class="container">
+  <span>컨테이너 직속 항목으로 상속받는 글꼴 크기</span>
+  <ul>
+    <li id="relative1">1번째 상대단위 테스트 리스트 아이템</li>
+    <li id="relative2">2번째 상대단위 테스트 리스트 아이템</li>
+    <li id="relative3">3번째 상대단위 테스트 리스트 아이템</li>
+    <li id="relative4">4번째 상대단위 테스트 리스트 아이템</li>
+    <li id="relative5">5번째 상대단위 테스트 리스트 아이템</li>
+  </ul>
+
+  <div class="box vw">VW : viewport 기준 상대크기 지정 (width)</div>
+  <div class="box vh">VH : viewport 기준 상대크기 지정 (height)</div>
+</div>
+
+
+</body>
+</html>

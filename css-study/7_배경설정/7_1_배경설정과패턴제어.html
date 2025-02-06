@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>배경설정 및 패턴 제어</title>
+  <style>
+      img {
+          margin: 5px;
+          width: 300px;
+          height: 300px;
+      }
+
+      .box {
+          margin: 5px;
+          width: 300px;
+          height: 300px;
+
+          /* 개별 구문 */
+          /*background: mediumvioletred;*/
+          /*background-image: url("weekly_best_pizza.png");*/
+          /*background-repeat: no-repeat;*/
+          /*background-position: center;*/
+          /*background-size: 200px 200px;*/
+          
+          /* 숏핸드 구문 */
+          /* background: <pattern> <color> <url("")> <align/width height>; */
+          background: mediumvioletred url("weekly_best_pizza.png") no-repeat center/200px 200px;
+      }
+  </style>
+</head>
+<body>
+
+<img src="weekly_best_pizza.png" alt="이번주에 피자먹은게 제일 맛있었음!">
+
+<div class="box box1"></div>
+<div class="box box2"></div>
+
+</body>
+</html>

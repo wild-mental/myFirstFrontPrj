@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float 와 Clear</title>
+  <style>
+      /* 블록 요소는 가로를 독점한다 */
+      /* float 을 사용하면 독점을 해제할 수 있다 */
+      div {
+          width: 100px;
+          height: 100px;
+          background-color: cyan;
+          margin: 5px;
+          line-height: 100px;
+          text-align: center;
+      }
+
+      .float-box {
+          /* float-box 끼리만 상호작용함 */
+          float: left;
+      }
+
+      .float-box:nth-child(4n+1) {
+          clear: left;
+      }
+
+      .float-box2 {
+          /* 기준 방향에 맞는(기준 방향과 동일한) clear 방향 설정 필요 */
+          float: right;
+      }
+
+      .float-box2:nth-child(3n+1) {
+          /* 행 선두 지정 효과 */
+          clear: right;
+      }
+
+      .fix-box {
+          /* 기본 relative 한 요소 간 로직을 따르고 있음 */
+          background-color: lightcoral;
+      }
+  </style>
+</head>
+<body>
+<div class="float-box">1</div>
+<div class="float-box">2</div>
+<div class="float-box">3</div>
+<div class="float-box">4</div>
+<!-- 레이아웃 기법은 한 화면 내에서 / 한 프로젝트 내에서 반드시 일관적으로 적용해야 함 -->
+<!--<div class="fix-box"></div>-->
+<!--<div class="fix-box"></div>-->
+<div class="float-box">5</div>
+<div class="float-box">6</div>
+<div class="float-box">7</div>
+<div class="float-box">8</div>
+<div class="float-box">9</div>
+<div class="float-box">10</div>
+<div class="float-box">11</div>
+<div class="float-box">12</div>
+
+<div class="float-box2">1</div>
+<div class="float-box2">2</div>
+<div class="float-box2">3</div>
+<div class="float-box2">4</div>
+<div class="float-box2">5</div>
+<div class="float-box2">6</div>
+<div class="float-box2">7</div>
+<div class="float-box2">8</div>
+<div class="float-box2">9</div>
+<div class="float-box2">10</div>
+<div class="float-box2">11</div>
+<div class="float-box2">12</div>
+
+
+</body>
+</html>
