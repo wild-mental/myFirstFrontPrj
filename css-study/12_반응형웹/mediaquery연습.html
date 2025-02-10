@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>미디어(매체-스크린매개체) 쿼리(화면 크기별 CSS 속성 선언) 연습</title>
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      @media screen and (max-width: 767px) {
+          .container {
+              background-color: lightgreen;
+          }
+
+          .container::after {
+              content: "(모바일 화면 효과 적용)";
+          }
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+          .container {
+              background-color: lightpink;
+          }
+
+          .container::after {
+              content: "(태블릿 화면 효과 적용)";
+          }
+      }
+
+      @media screen and (min-width: 1024px) {
+          .container {
+              background-color: lightcyan;
+          }
+
+          .container::after {
+              content: "(브라우저 화면 효과 적용)";
+          }
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>이 제목은 화면 크기에 따라 다르게 표시되고 싶습니다.</h1>
+  <p>문단의 내용도 화면 크기에 따라 다른 방식으로 꾸며주고 싶습니다.</p>
+</div>
+</body>
+</html>

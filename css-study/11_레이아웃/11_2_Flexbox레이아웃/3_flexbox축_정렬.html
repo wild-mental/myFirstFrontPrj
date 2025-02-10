@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox 축 정렬</title>
+  <style>
+      .container {
+          height: 300px;
+          border: 5px solid lightcoral;
+      }
+
+      .item {
+          height: 100px;
+          border: 5px solid cornflowerblue;
+      }
+
+      /* =================== 주축정렬 =================*/
+      .main-axis-container {
+          display: flex;
+          /*flex-direction: row;*/ /* 기본값 - 주축 (생략가능) */
+          justify-content: space-between;
+      }
+
+      .main-axis-item {
+          width: 100px;
+      }
+
+      /* =================== 교차축정렬 =================*/
+      .cross-axis-container {
+          display: flex;
+          /* 주축과 교차축은 flex 적용한 방향에 따름 */
+          /* 가로로 흐르고 있는 flexbox (주축 = 가로) */
+          flex-flow: row wrap;
+          justify-content: space-evenly;
+
+          /* 교차축에 대한 정렬기준 설정 */
+          align-items: center;
+          align-content: space-evenly;
+          /*  속성 간 영향 주고받는 것은 상세 제어 필요  */
+      }
+
+      .cross-axis-item {
+          width: 200px;
+          height: 50px;
+      }
+
+      /* =================== 양축정렬 =================*/
+      .img-box {
+          width: 400px;
+          height: 400px;
+          border: 1px solid darkslategrey;
+
+          /*  flexbox 를 활용한 가운데 정렬  */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .img-elm {
+          width: 350px;
+          height: 350px;
+          border: 1px solid black;
+          border-radius: 50%;
+          background: url("profile.png") center/cover;
+      }
+  </style>
+</head>
+<body>
+<div class="container main-axis-container">
+  <div class="item main-axis-item">1</div>
+  <div class="item main-axis-item">2</div>
+  <div class="item main-axis-item">3</div>
+  <div class="item main-axis-item">4</div>
+  <div class="item main-axis-item">5</div>
+</div>
+<div class="container cross-axis-container">
+  <div class="item cross-axis-item">1</div>
+  <div class="item cross-axis-item">2</div>
+  <div class="item cross-axis-item">3</div>
+  <div class="item cross-axis-item">4</div>
+  <div class="item cross-axis-item">5</div>
+</div>
+
+<div class="img-box">
+  <div class="img-elm"></div>
+</div>
+</body>
+</html>

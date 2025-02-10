@@ -1,0 +1,156 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 200vh;*/
+    text-transform: uppercase;
+    background-color: dodgerblue;
+}
+
+.panel.pricing-table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 2em;
+    padding: 40px 20px;
+}
+
+.pricing-plan {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    /*margin: 10px;*/
+    padding: 20px;
+    border-right: 1px solid lightgrey;
+}
+
+.pricing-plan > * {
+    margin: 20px 0;
+    position: relative;
+}
+
+.pricing-plan:last-child {
+    border-right: none;
+}
+
+/*.pricing-plan > *:not(:last-child):after {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    width: 80%;*/
+/*    margin: 15px auto;*/
+/*    border-bottom: 1px solid dimgray;*/
+/*}*/
+
+.pricing-features-item {
+    margin: 5px auto;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgrey;
+    font-size: 15px;
+    color: cornflowerblue;
+}
+
+.pricing-features-item:first-child {
+    border-top: 1px solid lightgrey;
+}
+
+.pricing-plan img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.pricing-header {
+    font-size: 20px;
+    font-weight: 700;
+    color: dimgray;
+    margin-bottom: 20px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.pricing-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.pricing-button {
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    width: 60%;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: #cde1eb solid 1px;
+    color: cornflowerblue;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-button:hover {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+@media only screen and (min-width: 900px) {
+    .panel.pricing-table {
+        flex-direction: row;
+
+    }
+
+    .pricing-table:after {
+        content: "";
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    body {
+        background-color: white;
+    }
+
+    .panel.pricing-table {
+        /*flex-direction: column;*/
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+        /*  TODO : 사이징 문제 추가 수정  */
+    }
+
+    .pricing-plan {
+        /*display: block;*/
+        width: 100%;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .pricing-plan:first-child {
+        /*display: block;*/
+    }
+
+    .pricing-plan img:last-child {
+        /*margin-bottom: 0;*/
+    }
+
+    .pricing-plan > *:not(:last-child):after {
+        width: 100%;
+    }
+}

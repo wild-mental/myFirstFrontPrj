@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>그리드로 만들어진 아이템들을 정렬하기!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="app.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <h1>세로(수직)정렬</h1>
+  <div class="row">
+    <div class="col-3 bg-primary text-start">
+      <div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores atque consectetur, cum
+          deserunt dignissimos ex facere fugit harum minus nobis odio officiis placeat ratione, suscipit. At ipsam sit
+          suscipit?
+        </div>
+        <div>Accusamus alias asperiores aspernatur consequatur deserunt dolor dolore ea earum expedita facilis, harum id
+          laudantium maxime molestias nostrum qui sequi tempora tempore totam voluptatum! Consectetur corporis enim
+          laboriosam quas veritatis!
+        </div>
+        <div>Deserunt excepturi quod soluta. Alias dolores ducimus eaque ipsum, magni molestiae molestias pariatur quam
+          quia? Accusantium alias at aut facilis nam quia quisquam quod ratione recusandae sunt. Inventore, neque
+          veniam?
+        </div>
+      </div>
+    </div>
+    <div class="col-3 align-self-center bg-info text-center">
+      <div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut delectus doloremque, dolores
+          ducimus eius, ex exercitationem facilis ipsa laudantium neque porro quae quibusdam sapiente sint sit soluta!
+          Alias, autem.
+        </div>
+        <div>Commodi cupiditate deserunt eligendi inventore itaque maxime, omnis perspiciatis quaerat, quam quos
+          recusandae similique tenetur! Doloremque error eveniet explicabo harum laudantium nam nostrum odio
+          reprehenderit sed soluta. Cupiditate minus, sit.
+        </div>
+      </div>
+    </div>
+    <div class="col-3 align-self-start bg-warning text-end">
+      <div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur blanditiis eum eveniet incidunt
+          omnis, repellendus reprehenderit voluptatibus. Ab corporis ipsam ipsum magni nemo, nostrum pariatur soluta
+          tempore velit voluptatem!
+        </div>
+        <div>Ad adipisci animi at consequuntur corporis cumque dignissimos dolor dolorum earum fugit libero, magnam
+          maxime minus nesciunt, omnis optio provident quibusdam quo repellat sit ullam vel vero voluptate? Laudantium,
+          temporibus.
+        </div>
+      </div>
+    </div>
+    <div class="col-3 align-self-end bg-dark text-light text-justify">
+      <div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A id maxime vitae. Accusantium aliquam aut dolore
+          eum, fuga fugit id illum itaque maiores nulla omnis quo quod sapiente veritatis voluptatibus.
+        </div>
+        <div>Asperiores, minus, rem! Ab aperiam consequatur debitis distinctio doloremque ducimus eligendi eos et
+          eveniet harum illum, incidunt ipsum mollitia porro possimus quam quidem rerum similique vero voluptatem!
+          Commodi fugiat, saepe!
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>수평 정렬</h1>
+  <h3>가로 공간이 남아있게끔 그리드를 편성하면, 수평 정렬 가능</h3>
+  <div class="row justify-content-evenly">
+    <div class="col-2 bg-info text-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cumque
+      deleniti eius
+      facere
+      laboriosam magnam odio placeat, quae quaerat quibusdam! A consequatur consequuntur, cupiditate excepturi
+      laudantium necessitatibus odit sint sit.
+    </div>
+    <div class="col-2 bg-secondary text-break">LoremLoremLoremLoremLoremLoremLorem ipsum dolor sit amet, consectetur
+      adipisicing
+      elit. A
+      accusamus
+      adipisci
+      corporis delectus
+      dignissimos eaque, explicabo id illo ipsum iste magni, maxime optio pariatur placeat reiciendis saepe sunt, velit
+      veniam?
+    </div>
+    <div class="col-2 bg-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam autem
+      commodi deserunt
+      dolore eveniet fuga ipsam laboriosam magni, maxime necessitatibus nemo, nisi nostrum perferendis quae quod rem sed
+      temporibus.
+    </div>
+    <div class="col-2 bg-danger text-nowrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+      dolorem facilis
+      fugit sed
+      vel. A doloremque expedita in iste labore maiores, molestias non placeat sint tempora ullam velit vitae
+      voluptatem.
+    </div>
+  </div>
+  <h1>Gutter(도랑) 적용하기</h1>
+  <div class="row gx-2">
+    <div class="col-3 text-white">
+      <div class="bg-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+        dignissimos earum, illum laborum neque placeat quia quos rem unde voluptatem! Ab corporis debitis error ex
+        impedit
+        natus quos vitae voluptas?
+      </div>
+    </div>
+    <div class="col-3 text-white">
+      <div class="bg-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab alias aut
+        cumque dignissimos dolor, ipsa molestiae, natus nemo numquam officia possimus quae quam quisquam repellat sed
+        tempora veniam. Consequuntur.
+      </div>
+    </div>
+    <div class="col-3 text-white">
+      <div class="bg-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+        aspernatur
+        blanditiis, culpa delectus deleniti dignissimos doloremque esse, fugit itaque, molestias natus pariatur
+        praesentium quas quisquam quod sint velit voluptas voluptatum?
+      </div>
+    </div>
+    <div class="col-3 text-white">
+      <div class="bg-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis
+        consectetur consequatur dignissimos dolor, incidunt inventore, laborum maxime molestiae obcaecati officia omnis
+        provident rem sapiente suscipit tenetur velit veniam voluptatem!
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

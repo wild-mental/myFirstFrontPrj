@@ -1,0 +1,146 @@
+/* 기본 스타일 초기화 */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: dodgerblue;
+    /*position: relative;*/
+    font-weight: bold;
+    display: flex; /* Flexbox 컨테이너로 설정 */
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        height: 100vh;
+    }
+}
+
+/* pc 화면 */
+.pricing-table {
+    text-transform: uppercase;
+    justify-content: space-around; /* 요소들 사이에 균등한 간격을 만듦 */
+    align-items: stretch; /* 높이를 균일하게 맞춤 */
+    padding: 50px;
+    background-color: dodgerblue;
+    display: flex;
+    flex-flow: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 각 가격 플랜 스타일 */
+.pricing-plan {
+    flex: 1; /* 모든 박스가 동일한 너비를 가지도록 설정 */
+    border-right: lightgray 1px groove; /* 각 플랜을 구분 */
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* 내부 요소를 세로로 정렬 */
+    min-height: 500px; /* 최소 높이 설정-->가운데만 튀어나오는 것을 고침 */
+}
+
+/* 첫 번째 pricing-plan의 왼쪽 둥근 테두리 */
+.pricing-plan:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* 마지막 pricing-plan의 오른쪽 둥근 테두리 */
+.pricing-plan:last-child {
+    /*margin-right: 0; !* 마지막 요소에는 오른쪽 여백 제거 */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 이미지 스타일 */
+.pricing-img {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto 20px; /* 가운데 정렬 및 아래 여백 */
+}
+
+/* 헤더 스타일 */
+.pricing-header {
+    font-size: 1.2em;
+    color: gray;
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
+
+/* 기능 목록 스타일 */
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+}
+
+.pricing-features-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+    color: dodgerblue;
+}
+
+/* 가격 스타일 */
+.pricing-price {
+    font-size: 2em;
+    color: dodgerblue;
+    margin-bottom: 50px;
+}
+
+/* 버튼 스타일 */
+.pricing-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+    color: dodgerblue;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid dodgerblue;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-button:hover {
+    /*background-color: #0056b3;*/
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+/* 특별 버튼 스타일 (Free trial) */
+/*.pricing-button.is-featured {*/
+/*    background-color: dodgerblue;*/
+/*    color: white;*/
+/*}*/
+
+/*.pricing-button.is-featured:hover {*/
+/*    background-color: #218838;*/
+/*}*/
+
+span {
+    font-weight: bold;
+    color: dodgerblue;
+}
+
+/*모바일 화면*/
+@media screen and (max-width: 899px) {
+    .pricing-table {
+        flex-direction: column; /* 세로로 정렬 */
+        gap: 20px; /* 각 pricing-plan 사이에 일정 간격을 줌 */
+        background-color: white;
+    }
+
+    .pricing-plan {
+        width: 100%; /* 각 가격 플랜이 가로를 꽉 채우게 설정 */
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+}
+

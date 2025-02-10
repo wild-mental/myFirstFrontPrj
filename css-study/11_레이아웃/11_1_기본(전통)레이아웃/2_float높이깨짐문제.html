@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float 속성에서의 레이아웃 제어 상세 케이스</title>
+  <style>
+      .container {
+          width: 550px;
+          padding: 20px;
+          border: 5px solid black;
+          /* 솔루션 1 */
+          /*overflow: hidden;*/
+      }
+
+      .box {
+          width: 150px;
+          height: 200px;
+          margin: 5px;
+          border: 5px solid darkgreen;
+          float: left;
+      }
+
+      /* 솔루션 1-2 */
+      /*.check-overflow {*/
+      /*    overflow: hidden;*/
+      /*}*/
+
+      /* 솔루션 2 */
+      /*.empty-clearfix {*/
+      /*    !* float 방식에서 개행요인을 발생시켜 relative 세로 공간 차지 로직에 영향 *!*/
+      /*    clear: left;*/
+      /*}*/
+
+      /* 솔루션 3 */
+      /* 가상요소를 발생시켜 clear 적용 */
+      .clear-both::after {
+          content: '';
+          display: block;
+          clear: both;
+      }
+
+      ul {
+          width: 550px;
+          border: 5px dotted darkcyan;
+          list-style: none;
+          /* 솔루션 1 */
+          /*overflow: hidden;*/
+      }
+
+      li {
+          margin: 10px 20px;
+          padding: 10px;
+          float: left;
+          border: 5px solid cornflowerblue;
+          border-radius: 50%;
+      }
+
+  </style>
+</head>
+<body>
+<!--<div class="container check-overflow">-->
+<div class="container clear-both">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <!--  화면 상에 불필요한 요소를 넣어야 하는 부작용 : DOM 객체가 지저분해지고 교란됨  -->
+  <!--  <div class="empty-clearfix"></div>-->
+</div>
+
+<!--<ul class="check-overflow">-->
+<ul class="clear-both">
+  <li>마가레트</li>
+  <li>공기</li>
+  <li>샌드위치</li>
+  <li>순두부찌개</li>
+  <!--  화면 상에 불필요한 요소를 넣어야 하는 부작용 : DOM 객체가 지저분해지고 교란됨  -->
+  <!--  <div class="empty-clearfix"></div>-->
+</ul>
+</body>
+</html>

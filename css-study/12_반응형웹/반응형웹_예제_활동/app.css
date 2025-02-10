@@ -1,0 +1,207 @@
+@media (min-width: 900px) {
+    body {
+        background-color: #61A9FF;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0 auto;
+        padding: 0 100px 0 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .panel.pricing-table {
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #ffffff;
+        align-items: stretch;
+        /*width: 90%;*/
+        /*height: 100%;*/
+        margin: 0 auto;
+        border-radius: 50px;
+    }
+
+    .pricing-plan {
+        flex: 1;
+        margin: 30px 0 30px 0;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 2px solid #CCC;
+    }
+
+    .pricing-plan:last-child {
+        border-right: none;
+    }
+
+    .pricing-img {
+        width: 60%;
+        display: block;
+        margin: 10% auto 0;
+    }
+
+    .pricing-header {
+        color: #878787;
+        font-size: 2vw;
+        margin-top: 10%;
+    }
+
+    ul {
+        display: block;
+        width: 80%;
+        list-style: none;
+        margin: 10% auto 0;
+        padding: 0;
+    }
+
+    li {
+        padding: 10% 10%;
+        color: #2374FA;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    li:is(:first-child) {
+        border-top: 1px solid #8080802e;
+        border-bottom: 1px solid #8080802e;
+    }
+
+    li:not(:first-child) {
+        border-bottom: 1px solid #8080802e;
+    }
+
+    .pricing-price {
+        display: block;
+        font-weight: bold;
+        font-size: 2vw;
+        color: #2374FA;
+        margin: 10% auto;
+    }
+
+    a {
+        width: 60%;
+        margin: 10% auto 15%;
+        padding: 5% 10%;
+        font-weight: bold;
+        border: 1px solid #D4E9EF;
+        color: #4E95E6;
+        font-size: 1.5vw;
+        text-decoration: none;
+        border-radius: 15px;
+    }
+
+    a:hover {
+        border: 1px solid #48AAFF;
+        background: #48AAFF;
+        color: #ffffff;
+    }
+}
+
+@media (max-width: 899px) {
+    body {
+        background-color: #61A9FF;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    .panel.pricing-table {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+
+    .pricing-plan {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        height: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: none;
+    }
+
+    .pricing-plan:last-child {
+        border-bottom: none;
+    }
+
+    .pricing-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .pricing-header {
+        color: #878787;
+        font-size: 5vw;
+        margin-top: 5%;
+    }
+
+    ul {
+        display: block;
+        width: 80%;
+        list-style: none;
+        margin: 5% auto 0;
+        padding: 0;
+    }
+
+    li {
+        padding: 5% 0;
+        color: #2374FA;
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    li:is(:first-child) {
+        border-top: 1px solid #8080802e;
+        border-bottom: 1px solid #8080802e;
+    }
+
+    li:not(:first-child) {
+        border-bottom: 1px solid #8080802e;
+    }
+
+    .pricing-price {
+        display: block;
+        font-weight: bold;
+        font-size: 5vw;
+        color: #2374FA;
+        margin: 5% auto;
+    }
+
+    a {
+        width: 30%;
+        margin: 5% auto 10%;
+        padding: 3% 5%;
+        font-weight: bold;
+        border: 1px solid #D4E9EF;
+        color: #4E95E6;
+        font-size: 4vw;
+        text-decoration: none;
+        border-radius: 15px;
+    }
+
+    a:hover {
+        border: 1px solid #48AAFF;
+        background: #48AAFF;
+        color: #ffffff;
+    }
+}
